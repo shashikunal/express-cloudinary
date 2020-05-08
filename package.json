@@ -1,0 +1,24 @@
+{
+  "name": "qspiderswebsite",
+  "version": "1.0.0",
+  "description": "we are using express and nodejs",
+  "main": "server.js",
+  "author": "shashi",
+  "license": "MIT",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "bootstrap": "^4.4.1",
+    "cloudinary": "^1.21.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "handlebars-intl": "^1.1.2",
+    "jquery": "^3.5.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.11",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "handlebars": "^4.7.6"
+  }
+}

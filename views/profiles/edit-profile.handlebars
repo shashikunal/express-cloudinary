@@ -1,0 +1,50 @@
+<section class="my-4">
+    <article>
+        <section id="errors" class="my-4">
+            {{#each errors}}
+            <div class="alert alert-danger my-2">
+                {{text}}
+            </div>
+            {{else}}
+            {{/each}}
+        </section>
+
+        <h1 class="font-weight-bold text-upppercase">Edit Profile</h1>
+        <form action="/profile/edit-profile/{{profile._id}}?_method=PUT" method="post" novalidate
+            enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="row">
+                <div class="col-md-4">
+                    <label>FirstName</label>
+                    <input type="file" class="form-control" name="photo" required placeholder="upload photo">
+                </div>
+                <div class="col-md-4">
+                    <label>FirstName</label>
+                    <input type="text" class="form-control" value="{{profile.firstname}}" name="firstname" required
+                        placeholder="enter firstname">
+                </div>
+                <div class="col-md-4">
+                    <label>LastName</label>
+                    <input type="text" class="form-control" value="{{profile.lastname}}" name="lastname" required
+                        placeholder="enter lastname">
+                </div>
+                <div class="col-md-4">
+                    <label>email</label>
+                    <input type="text" class="form-control" value="{{profile.email}}" name="email" required
+                        placeholder="enter email">
+                </div>
+                <div class="col-md-4">
+                    <label>Phone Number</label>
+                    <input type="text" class="form-control" value="{{profile.phonenumber}}" name="phonenumber" required
+                        placeholder="enter phonenumber">
+                </div>
+                <div class="col-md-12 mt-4">
+                    <button class="btn btn-primary">Edit Profile</button>
+                </div>
+            </div>
+        </form>
+    </article>
+
+
+
+</section>

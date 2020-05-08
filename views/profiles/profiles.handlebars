@@ -1,0 +1,46 @@
+<section class="profileBlock my-4">
+    <article>
+        {{#each body}}
+        <div class="block">
+            <div class="card">
+                {{#if this.photo}}
+                <img src="{{ trimString photo.0.path}}" alt="image" class="img-card-top">
+                {{else}}
+                <img src="https://cdn.pixabay.com/photo/2017/07/18/23/23/user-2517433_960_720.png" />
+                {{/if}}
+
+                <h1 class="card-title font-weight-bold text- h3">{{firstname}}</h1>
+
+                <div>
+                    <p class="card-text">
+                        <div class="btn-group float-right ml-4">
+                            <a class="btn btn-outline-success btn-sm" href="/profile/edit-profile/{{_id}}">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form action="/profile/delete-profile/{{_id}}?_method=DELETE" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </p>
+                    <p class="card-text iconBlock"><i class="fas fa-envelope-open-text"></i>{{email}}</p>
+                    <p class="card-text iconBlock"><i class="fa fa-phone" aria-hidden="true"></i>{{phonenumber}}</p>
+                    <p class="card-text iconBlock">With supporting text below as a natural lead-in to additional
+                        content.</p>
+                    <p class="card-text iconBlock"><span class="date float-left">
+                            {{formatDate  date day="numeric" month="long" year="numeric"}}</br></span>
+                        <span class="badge badge-success float-right">{{formatRelative  date postDate}}</span>
+                    </p>
+
+
+                </div>
+            </div>
+
+        </div>
+        {{else}}
+        <h1>No Info</h1>
+        {{/each}}
+    </article>
+</section>
