@@ -5,6 +5,10 @@ var HandlebarsIntl = require("handlebars-intl");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
+const session = require("express-session");
+const flash = require("connect-flash");
+const cookieParser = require("cookie-parser");
+const toastr = require("express-toastr");
 const profile = require("./Routes/profile");
 HandlebarsIntl.registerWith(Handlebars);
 require("dotenv").config();
@@ -49,9 +53,31 @@ app.use(bodyParser.json());
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
 
+app.use(cookieParser("secret"));
+//express session
+app.use(
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use(flash());
+app.use(toastr());
+
+// set global variables
+app.use(function (req, res, next) {
+  res.locals.toasts = req.toastr.render();
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.errors_msg = req.flash("errors_msg");
+  res.locals.error = req.flash("error");
+  next();
+});
+
 //static routes
 app.get("/", (req, res) => {
-  res.render("./home");
+  res.render("./home", { req: req });
+  res.send(req.toastr.render());
 });
 //use routes
 app.use("/profile", profile);

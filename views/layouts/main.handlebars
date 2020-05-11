@@ -7,19 +7,31 @@
     <title>Qspiders</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+
     <link rel="stylesheet" href="../../css/qspiders.css">
+
 </head>
 
 <body>
+
     <header>
         {{> _header}}
+        {{> _msg}}
     </header>
     <main class="container">{{{body}}}</main>
 
     {{!-- //scripts --}}
-    <script src="../../jquery/dist/jquery.min.js"></script>
+
+    {{!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> --}}
+
     <script src="../../bootstrap/dist/js/bootstrap.js"></script>
     <script src="../../js/custom.js"></script>
+
+
 </body>
 
 </html>

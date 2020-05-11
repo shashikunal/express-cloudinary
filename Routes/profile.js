@@ -82,6 +82,7 @@ router.post("/add-profile", upload.single("photo"), async (req, res) => {
     new Profile(newProfile)
       .save()
       .then((profile) => {
+        req.flash("success_msg", "Successfully profile created!");
         res.redirect("/profile/profiles", 302, {
           profile: profile,
         });
@@ -103,6 +104,7 @@ router.put("/edit-profile/:id", upload.single("photo"), (req, res) => {
       data
         .save()
         .then((profile) => {
+          req.flash("success_msg", "Successfully profile updated!");
           res.redirect("/profile/profiles", 302, {
             profile: profile,
           });
@@ -115,6 +117,7 @@ router.put("/edit-profile/:id", upload.single("photo"), (req, res) => {
 router.delete("/delete-profile/:id", (req, res) => {
   Profile.remove({ _id: req.params.id })
     .then((_) => {
+      req.flash("success_msg", "successfully deleted profile");
       res.redirect("/profile/profiles", 302);
     })
     .catch((err) => console.log(err));

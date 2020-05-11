@@ -41,3 +41,12 @@ img {
   padding: 0 8px 0 0px;
   color: #28a745;
 }
+
+.alert {
+  position: absolute;
+  right: 0;
+  top: 8%;
+  margin: 3px;
+  transform: translate(500px);
+  transition: ease all 0.7s;
+}
