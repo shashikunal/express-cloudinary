@@ -1,6 +1,6 @@
-<section class="my-4">
+<section>
     <article>
-        <section id="errors" class="my-4">
+        <section id="errors">
             {{#each errors}}
             <div class="alert alert-danger my-2">
                 {{text}}
@@ -9,7 +9,7 @@
             {{/each}}
         </section>
 
-        <h1 class="font-weight-bold text-upppercase">Add Profile</h1>
+        <h3 class="font-weight-bold text-upppercase">Add Profile</h3>
         <form action="/profile/add-profile" method="post" novalidate enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-4">
