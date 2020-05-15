@@ -1,13 +1,6 @@
 <section>
     <article>
-        <section id="errors">
-            {{#each errors}}
-            <div class="alert alert-danger my-2">
-                {{text}}
-            </div>
-            {{else}}
-            {{/each}}
-        </section>
+
 
         <h3 class="font-weight-bold text-upppercase">Edit Profile</h3>
         <form action="/profile/edit-profile/{{profile._id}}?_method=PUT" method="post" novalidate

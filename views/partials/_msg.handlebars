@@ -19,3 +19,22 @@
 
 
 {{/if}}
+
+
+<section id="errors">
+    {{#each errors}}
+    <div class="alert alert-danger my-2">
+        {{text}}
+    </div>
+    {{else}}
+    {{/each}}
+</section>
+
+<section id="errors">
+    {{#if error}}
+    <div class="alert alert-danger my-2">
+        {{error}}
+    </div>
+
+    {{/if}}
+</section>

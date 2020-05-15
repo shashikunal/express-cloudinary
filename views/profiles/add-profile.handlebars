@@ -1,13 +1,6 @@
 <section>
     <article>
-        <section id="errors">
-            {{#each errors}}
-            <div class="alert alert-danger my-2">
-                {{text}}
-            </div>
-            {{else}}
-            {{/each}}
-        </section>
+
 
         <h3 class="font-weight-bold text-upppercase">Add Profile</h3>
         <form action="/profile/add-profile" method="post" novalidate enctype="multipart/form-data">
